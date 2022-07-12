@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Configure Git') {
+            steps {
+                git branch: 'jenkins-test',
+    url: 'https://github.com/humandroid1/Skillsharp.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'cd Jenkins'
+                sh 'python test.py'
+            }
+        }
+    }
+}
