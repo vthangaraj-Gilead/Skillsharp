@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'cd Jenkins'
-                sh 'python test.py'
+                sh 'python Jenkins/test.py'
             }
         }
     }
