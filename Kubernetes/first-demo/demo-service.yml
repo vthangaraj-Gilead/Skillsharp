@@ -11,3 +11,6 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 8080
+
+    ## The target port is the port where the pods are listening and the port 
+    ##  is used for communication by the service

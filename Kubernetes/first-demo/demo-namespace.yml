@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap
+  namespace: demo-namespace
+  labels:
+    app: myapplication
+data:
+  test: dummy
+
+# this will create config map in demo-namespace 
