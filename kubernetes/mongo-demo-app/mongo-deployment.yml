@@ -27,3 +27,20 @@ spec:
             secretKeyRef:
               name: mongo-secret
               key: password
+
+---
+## This is for internal service creation
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+
+spec:
+  selector:
+    app: mongoapp
+  #type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017 
