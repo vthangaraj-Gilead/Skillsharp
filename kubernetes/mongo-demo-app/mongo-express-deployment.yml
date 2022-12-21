@@ -35,3 +35,23 @@ spec:
             configMapKeyRef:
               name: mongo-config-map
               key: database_url
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-express-service
+spec:
+  selector:
+    app: mongo-express
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
+    # you can specify a value in the `spec.ports[*].nodePort` field.
+      nodePort: 30000
+
+      ## Node port can only be between 30000 and 32767
+      ## Load Balancer type Service is used to connect to internet, i.e external service
