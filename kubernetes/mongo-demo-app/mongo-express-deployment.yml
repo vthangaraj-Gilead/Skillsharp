@@ -51,7 +51,7 @@ spec:
       targetPort: 8081
     # If you set the `spec.type` field to `NodePort` and you want a specific port number,
     # you can specify a value in the `spec.ports[*].nodePort` field.
-      nodePort: 30000
+      nodePort: 30001
 
       ## Node port can only be between 30000 and 32767
       ## Load Balancer type Service is used to connect to internet, i.e external service
